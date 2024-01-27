@@ -1,0 +1,194 @@
+
+
+@media screen and (max-width: 1200px) {
+    .none{
+        display:inline-block !important;
+        display:none !important;
+    }
+    
+    .visible{
+        display: block !important;
+    }
+    .rest-options{
+        justify-content: end !important;
+    }
+    .main-menu {
+        .left{
+            width:fit-content !important;
+            max-width: 707px !important;
+           
+            .svg-cont{
+                margin-top:20px !important;
+            }
+            svg{
+               width: 100% !important;
+               height: fit-content !important;
+               max-height: 216px !important;
+           }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    .none-l{
+        display: none !important;
+    }
+    .visible-l{
+        display: block !important;
+    }
+    .logo-container img{
+        width: 150px !important;
+        height: 35px !important;
+        margin-left: 69px !important;
+    }
+    .main-menu {
+        flex-direction: column !important;
+        margin-top:0 !important;
+        align-items: center !important;
+        .left{
+            width:80% !important;
+            margin-top:0 !important;
+            .svg-cont{
+                margin-top:40px !important;
+            }
+        }
+        .right{
+            margin-top: 20px !important;
+            padding-right:0 !important;
+        }
+    }
+     .top-cont-1{
+        min-height: 150px !important;
+     }
+    .feature1-ins,.testimonials-1-ins{
+        grid-template-rows: repeat(4,1fr) !important;
+        grid-template-columns: repeat(1,1fr) !important;
+        padding:10px !important;
+        width:calc(100% - 20px) !important;
+        div{
+            text-align: center !important;
+        }
+        .icon-heading,.btn-wrap{
+            justify-content: center !important;
+        }
+        .top-cont-2{
+            padding:20px !important;
+            width:calc(100% - 40px) !important;
+        }
+        .icon{
+            width:32px !important;
+            height: 32px !important;
+
+        }
+        .heading{
+            font-size: 18px !important;
+        }
+    
+        .body,.btn-wrap button{
+            font-size: 12px !important;
+        }
+
+        .body{
+            margin-bottom: 12px !important;
+        }
+    }
+
+    .testimonials-1-ins{
+        grid-template-columns: repeat(1,1fr) !important;
+        grid-template-rows: repeat(1,1fr) !important;
+    }
+    
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .none-sm{
+        display:none !important;
+    }
+    .visible-sm{
+        display: block !important;
+    }
+    .logo-container img{
+        margin-left: 20px !important;
+    }
+    .icon-wrap{
+        margin-right: 20px !important;
+    }
+    
+    .menu-desc-box div:first-child{
+        font-size: 18px !important;
+    }
+
+    .menu-desc-box div:nth-child(2){
+        font-size: 12px !important;
+        line-height: 22px !important; 
+letter-spacing: 0.24px !important;
+    }
+
+    .main-menu .left{
+        padding: 10px !important;
+    }
+    .main-menu .right{
+        padding: 10px !important;
+        width:90% !important;
+        max-width: 410px !important;
+    }
+
+    .sign-in,.join-in{
+        font-size: 16px !important;
+    }
+    input,.g-text,.fb-text,.separator-text,label[for="remember"],
+    .continue-btn,.forgot-pass div:last-child,.pass-strength,.terms{
+        font-size: 12px  !important;
+    }
+
+    .google-wrap,.fb-wrap{
+        padding:5px 0 !important;
+    }
+
+    .email-wrap,.pass-wrap{
+        padding:5px !important;
+    }
+
+    .login-wrap{
+        height: 70px !important;
+    }
+
+    .join-in-wrap .agree,.continue-btn>div, .continue-btn{
+        font-size: 10px !important;
+        padding:5px 0 !important;
+    }
+
+    .separator-line{
+        width: calc(50% - 48.5px) !important;
+    }
+    .input-fields{
+        width:100% !important;
+    }
+    .btn-wrap button{
+        width: 100% !important; 
+    }
+
+}
+
+@media screen and (max-width:350px) {
+    .g-icon,.fb-icon{
+        margin-right: 40px !important;
+    }
+    .icon-wrap{
+        margin-right: 10px !important;
+    }
+    .options-icon{
+        margin-left:0 !important;
+    }
+    input,.g-text,.fb-text,.separator-text,label[for="remember"],
+    .continue-btn,.forgot-pass div:last-child,.pass-strength,.terms{
+        font-size: 10px !important;
+    }
+    .forgot-pass{
+        margin-right: 0 !important;
+    }
+}

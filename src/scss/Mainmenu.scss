@@ -1,0 +1,255 @@
+@use "./App";
+@mixin w-h($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin font($family, $size, $style, $weight, $line-height,$letter-spacing) {
+  font-family: $family;
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+
+.main-menu {
+  @include w-h(100%, fit-content);
+  @extend .flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.main-menu .left {
+  @include w-h(707px, fit-content);
+  margin-top: 20px;
+  padding: 40px;
+
+  .svg-cont {
+    margin-top: 60px;
+  }
+}
+
+.main-menu .right {
+  @include w-h(410px, fit-content);
+  margin-top: 80px;
+  padding-right:30px;
+  margin-bottom: 20px;
+}
+
+.menu-desc-box {
+  @include w-h(100%, fit-content);
+  @extend .flex;
+  flex-direction: column;
+
+  div {
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+  }
+}
+
+
+
+.menu-desc-box > div:first-child {
+  @include font(Poppins, 36px, italic, 600, normal, 0.72px);
+}
+
+.menu-desc-box > div:not(:nth-child(1)) {
+  color: #000;
+  @include font(Poppins, 14px, normal, 300, 30px, 0.28px);
+}
+
+.sign-in-heading {
+  @include w-h(100%, 34px);
+  @extend .flex;
+  justify-content: flex-start;
+}
+
+.sign-in,
+.join-in {
+  @include font(Poppins, 20px, normal, 600, normal, normal);
+  color: #939ca3;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.login-wrap {
+  @include w-h(100%, 96px);
+  @extend .flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.google-wrap,
+.fb-wrap {
+  @include w-h(100%, 16px);
+  @extend .flex;
+  border-radius: 8px;
+  border: 1px solid #8064a2;
+  background: #f7f5f9;
+  padding: 12px 0;
+  justify-content: start;
+  cursor: pointer;
+}
+
+.g-icon,
+.fb-icon {
+  @include w-h(16px, 16px);
+  margin: 0 80px 0 30px;
+}
+
+.g-text,
+.fb-text {
+  color: #08090a;
+  @include font(Poppins, 14px, normal, 600, 16px, normal);
+}
+
+.separator {
+  @include w-h(100%, fit-content);
+  @extend .flex;
+  margin: 20px 0;
+}
+
+.separator-line {
+  @include w-h(149px, 2px);
+  background: #ced4da;
+}
+
+.separator-text {
+  @include w-h(97px, 16px);
+  @include font(Poppins, 12px, normal, 600, 16px, normal);
+  color: #000;
+}
+
+.input-fields {
+  @include w-h(410px, fit-content);
+  @extend .flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.email-wrap,
+.pass-wrap {
+  @include w-h(90%, 26px);
+  @extend .flex;
+  justify-content: start;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #adb2b9;
+  background: #fff;
+  input {
+    display: block;
+    @include w-h(100%, 100%);
+    outline: none;
+  }
+}
+
+.pass-wrap input {
+  width: 80%;
+  margin-right: 25px;
+}
+
+.eye-icon {
+  @include w-h(16px, 16px);
+  cursor: pointer;
+}
+
+.continue-wrap {
+  @include w-h(100%, 80px);
+  @extend .flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .forgot-pass-wrap {
+    @include w-h(100%, 16px);
+    @extend .flex;
+    justify-content: space-between;
+    color: #939ca3;
+  }
+
+  .forgot-pass {
+    @extend .flex;
+  }
+
+  .remember-me {
+    @extend .flex;
+    margin-left: 10px;
+  }
+
+  input[type="checkbox"] {
+    @include w-h(16px, 16px);
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  label[for="remember"] {
+    display: block;
+    width: 92px;
+    color: #000;
+    @include font(Poppins, 12px, normal, 400, 16px, normal);
+    cursor: pointer;
+  }
+}
+
+.forgot-pass {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.forgot-pass div:first-child {
+  @include w-h(15.759px, 16px);
+  margin-right: 5px;
+}
+
+.forgot-pass div:last-child {
+  width: 107.361px;
+  color: #000;
+  @include font(Poppins, 12px, normal, 400, 16px, normal);
+}
+
+.continue-btn {
+  @include w-h(95%, 16px);
+  @extend .flex;
+  padding: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #000;
+  cursor: pointer;
+  div {
+    @include font(Poppins, 14px, normal, 600, 16px, normal);
+  }
+}
+
+
+.join-in-wrap{
+    @include w-h(100%, fit-content);
+    @extend .flex;
+    align-items: end;
+    flex-direction: column;
+    margin-top:-15px;
+    .pass-strength{
+        color:  #939CA3;
+        @include font(Poppins,10px ,normal ,600 , 16px,normal);
+
+margin: 0 10px 20px 0;
+    }
+
+    .terms{
+        @include w-h(100%, fit-content);
+        color: #6D747A;
+        @include font(Poppins, 12px, normal, 400, normal, normal);
+text-align: center;
+}
+
+.agree{
+    width:97%;
+    margin-right:9px;
+    background: #8064A2;
+    color: #FFF;
+    @include font(Poppins, 14px, normal, 600, 16px, normal);
+margin-top:10px;
+border: none;
+}
+}
