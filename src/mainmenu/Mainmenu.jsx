@@ -1,4 +1,4 @@
-import '../scss/mainmenu.scss';
+import '../scss/Mainmenu.scss';
 import Menuicon from '../icons/Mainmenu/Menuicon';
 import Signin from './Signin';
 import SigninMobile from './SigninMobile';
