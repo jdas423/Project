@@ -1,13 +1,12 @@
-@use "./Mainmenu";
+
 @use "./App";
 .feature1-wrap {
-  @include Mainmenu.w-h(100%, fit-content);
   min-height: 818px;
-  @extend .flex;
+  @include App.w-h-flex(100%, fit-content);
 }
 
 .feature1-ins,.testimonials-1-ins {
-  @include Mainmenu.w-h(calc(100% - 200px), fit-content);
+  @include App.w-h(calc(100% - 200px), fit-content);
   min-height: 618px;
   padding: 100px;
   max-width: 1240px;
@@ -16,36 +15,30 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   .top-cont-1 {
-    @include Mainmenu.w-h(100%, fit-content);
     min-height: 297px;
-    @extend .flex;
-    flex-direction: column;
     border-radius: 8px;
     border: 1px solid #aec0d3;
     background: #fff;
+    @include App.w-h-flex(100%, fit-content,center,center,column);
     .top-cont-2 {
       padding: 44px;
-      @include Mainmenu.w-h(calc(100% - 88px), fit-content);
+      @include App.w-h(calc(100% - 88px), fit-content);
       .icon-heading,
       .btn-wrap {
-        @include Mainmenu.w-h(100%, fit-content);
-        @extend .flex;
-        justify-content: flex-start;
+        @include App.w-h-flex(100%, fit-content,flex-start);
       }
       .body {
-        @include Mainmenu.w-h(100%, fit-content);
+        @include App.w-h(100%, fit-content);
       }
       .icon {
-        @include Mainmenu.w-h(40px, 40px);
-        margin-right: 24px;
+        @include App.w-h(40px, 40px);
+        margin-right: 10px;
       }
       .heading {
-        @include Mainmenu.font(Poppins, 24px, normal, 600, normal, normal);
-        color: #000000;
+        @include App.font(#000000,Poppins, 24px, normal, 600, normal, normal);
       }
       .body {
-        @include Mainmenu.font(Poppins, 16px, normal, 300, normal, normal);
-        color: #000000;
+        @include App.font(#000000,Poppins, 16px, normal, 300, normal, normal);
         margin: 26px 0 44px 0;
       }
       .btn-wrap button {
@@ -53,4 +46,8 @@
       }
     }
   }
+}
+
+.feature1-ins{
+  padding-bottom: 0;
 }

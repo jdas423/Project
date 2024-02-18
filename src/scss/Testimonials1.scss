@@ -1,14 +1,17 @@
 
-@use "./Mainmenu";
+
 @use "./App";
 .testimonials-1{
     @extend .flex;
-    @include Mainmenu.w-h(100%, fit-content);
+    @include App.w-h(100%, fit-content);
     height: fit-content;
+    background: #F7FDFF;
+    padding-top: 15px;
     .testimonials-1-ins{
         grid-template-rows: repeat(1, 1fr);
         grid-template-columns: repeat(1, 1fr);
-        min-height:300px;
+        min-height:220px;
         padding-top:0;
+        padding-bottom: 50px;
     }
 }

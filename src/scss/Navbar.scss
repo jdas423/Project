@@ -1,85 +1,92 @@
 @use "App";
 
+
 @font-face {
   font-family: Poppins;
   src: url("../fonts/Poppins-Regular.ttf");
 }
 
 .navbar {
-  width: 100%;
-  height: 80px;
   @include App.background(#ffffff);
   @include App.box-shadow(rgba(0, 0, 0, 0.08));
   @extend .flex;
+  @include App.w-h(100%,80px);
 }
 
 .logo-container img {
-  width: 293.258px;
-  height: 60px;
   margin-left: 20px;
+  @include App.w-h(293.258px,60px);
 }
 
 .search-container {
   @extend .flex;
   justify-content: space-between;
-  width: 300px;
-  height: 40px;
   border-radius: 8px;
   border: 1px solid #ebedf0;
   padding-left: 24px;
+  @include App.w-h(300px,40px);
 }
 
 .search-text {
-  width: 85%;
-  height: 100%;
+
+  @include App.w-h(85%,100%);
+
+  input {
+    @include App.w-h(100%,100%);
+    @include App.font(#939ca3,Poppins,12px,normal,300,40px,normal);
+    outline: none;
+  }
 }
 
 .search-icon {
-  width: 40px;
-  height: 40px;
+
   border-radius: 0px 8px 8px 0px;
   @include App.background(#8064a2);
   @extend .flex;
   justify-content: center;
   cursor: pointer;
+  @include App.w-h(40px,40px);
 }
 
-.search-text input {
-  width: 100%;
-  height: 100%;
-  color: #939ca3;
-  font-family: Poppins;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 40px;
-  outline: none;
-}
+ 
 
 .rest-options-cont {
   height: 40px;
 }
 
 .rest-options {
-  width: 100%;
-  height: 100%;
+
   @extend .flex;
+  @include App.w-h(100%,100%);
+  .box-wrap {
+    @extend .flex;
+    padding-left: 20px;
+  }
+  
+  .icon-wrap {
+    @extend .flex;
+  }
+  
+  .sign-in-wrap {
+    @extend .flex;
+    margin: 0 20px;
+  }
 }
 
 .options-cont {
-  width: 107px;
-  height: 24px;
+
   @extend .flex;
   padding: 0 5px;
   cursor: pointer;
+  @include App.w-h(107px,24px);
 }
 
 .options-icon,
 .options-arrow {
-  width: 24px;
-  height: 24px;
+
   @extend .flex;
   cursor: pointer;
+  @include App.w-h(24px,24px);
 }
 
 .options-arrow {
@@ -87,27 +94,10 @@
 }
 
 .options-text {
-  color: #000;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 23px;
+  @include App.font(#000000,Poppins,14px,normal,500,23px,normal);
 }
 
-.rest-options .box-wrap {
-  @extend .flex;
-  padding-left: 20px;
-}
 
-.rest-options .icon-wrap {
-  @extend .flex;
-}
-
-.rest-options .sign-in-wrap {
-  @extend .flex;
-  margin: 0 20px;
-}
 
 .options-icon,
 .options-text,
@@ -133,21 +123,17 @@
   flex-direction: column;
   gap: 5px;
   background: #ffffff;
+
+  li {
+    width: 147px;
+    @include App.font(#6d747a,Poppins,14px,normal,400,18px,0.07px);
+    padding: 12px 61px 12px 12px;
+    cursor: pointer;
+    border: 1px solid #acc5eb;
+  }
+  
 }
 
-.dropdown li {
-  width: 147px;
-  color: #6d747a;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0.07px;
-  padding: 12px 61px 12px 12px;
-  cursor: pointer;
-  border: 1px solid #acc5eb;
-}
 
 .dd-vis {
   display: none;

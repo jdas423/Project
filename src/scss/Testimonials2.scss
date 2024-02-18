@@ -1,0 +1,144 @@
+@use "./Mainmenu";
+@use "./App";
+
+.testimonials-2 {
+    @include App.w-h(100%, fit-content);
+    @extend .flex;
+    background: #F7FDFF;
+
+    .testimonials-2-ins {
+        @include App.w-h(calc(100% - 200px), fit-content);
+        padding: 10px 100px 50px 100px;
+        max-width: 1240px;
+        
+
+
+        .top-cont-2-1 {
+            @include App.w-h(100%, fit-content);
+            @extend .flex;
+            border-radius: 8px;
+            border: 1px solid #aec0d3;
+            background: #F7F5F9;
+
+            .top-cont-2-2 {
+                @include App.w-h(calc(100% - 80px), fit-content);
+                min-height: 270px;
+                @extend .flex;
+                flex-direction: column;
+
+                .icon-heading {
+                    @include App.w-h(100%, fit-content);
+                    @extend .flex;
+                    justify-content: start;
+                    margin-bottom: 20px;
+                    margin-top: 40px;
+
+                    .icon {
+                        @include App.w-h(40px, 40px);
+                        margin-right: 10px;
+                    }
+
+                    .heading {
+                        @include App.font(#08090A,Poppins, 24px, normal, 600, normal, normal);
+                    }
+                }
+
+                .body {
+                    @include App.w-h(100%, fit-content);
+                    @include App.font(#000000,Poppins, 16px, normal, 300, 30px, 0.36px);
+                    margin-bottom: 10px;
+                }
+
+                .audio-clip {
+                    margin: 20px 0 30px 0;
+                    @include App.w-h(100%, fit-content);
+                    @extend .flex;
+                    .profile {
+                        @include App.w-h(fit-content, 100px);
+                        @extend .flex;
+
+                        .profile-img-wrap {
+                            margin-right: 10px;
+                            img {
+                                @include App.w-h(60px, 60px);
+                                border-radius: 100px;
+                            }
+                        }
+
+                        .details {
+                            @extend .flex;
+                            flex-direction: column;
+                            align-items: start;
+
+                            .name {
+
+                                @include App.font(#8064A2,Poppins, 14px, normal, 600, normal, 0.36px);
+                                text-wrap: nowrap;
+                            }
+
+                            .profession {
+                                @include App.font(#0096C8,Poppins, 12px, normal, 400, normal, 0.36px);
+                                text-wrap:nowrap;
+                            }
+                        }
+                    }
+
+                    .audio-cont{
+                        @include App.w-h(fit-content,fit-content);
+                        max-width: 776px;
+                        max-height: 100px;
+                        border-radius: 8px;
+                        background:  #CCC1DA;
+                        @extend .flex;
+                        .play{
+                            @include App.w-h(40px,40px);
+                            border-radius: 20px;
+                            @extend .flex;
+                            background: #ffffff;
+                            margin: 0 20px;
+                            div{
+                                @include App.w-h(24px,24px); 
+                            }
+                        }
+                        .progress{
+                            @include App.w-h(420px,2px);
+                            border-radius: 2px;
+                            background:  #FFF;
+                            overflow: visible;
+                            @extend .flex;
+                            justify-content: flex-start;
+                            margin-right: 20px;
+                            svg{
+                                display:block;
+                                transform: translateX(-6px);
+                            }
+                        }
+
+                        .number{
+                            @include App.font(#8064A2,Poppins,12px,normal,400,16px,normal);
+                            margin-right:30px;
+                        }
+                        .profile{
+                            position: relative;
+                            margin-right: 20px;
+                            img{
+                                @include App.w-h(60px,60px);
+                                border-radius: 60px;
+                            }
+                            .mic{
+                                position:absolute;
+                                @include App.w-h(32px,32px);
+                                top:43px;
+                                left:-13px;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+
+    }
+}

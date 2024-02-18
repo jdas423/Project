@@ -1,148 +1,108 @@
 @use "./App";
-@mixin w-h($width, $height) {
-  width: $width;
-  height: $height;
-}
 
-@mixin font($family, $size, $style, $weight, $line-height,$letter-spacing) {
-  font-family: $family;
-  font-size: $size;
-  font-style: $style;
-  font-weight: $weight;
-  line-height: $line-height;
-  letter-spacing: $letter-spacing;
-}
 
 
 .main-menu {
-  @include w-h(100%, fit-content);
-  @extend .flex;
-  justify-content: space-around;
-  align-items: flex-start;
-}
-
-.main-menu .left {
-  @include w-h(707px, fit-content);
-  margin-top: 20px;
-  padding: 40px;
-
-  .svg-cont {
-    margin-top: 60px;
+  @include App.p-b-m-w-h-f(none,none,none,100% fit-content,j space-around a flex-start);
+  .left {
+   @include App.p-b-m-w-h-f(40px,none,t 20px,707px fit-content,none);
+  
+   .svg-cont {
+     margin-top: 60px;
+   }
+  }
+  .right {
+    @include App.p-b-m-w-h-f(r 30px,none,t 80px b 20px, 410px fit-content,none);
   }
 }
 
-.main-menu .right {
-  @include w-h(410px, fit-content);
-  margin-top: 80px;
-  padding-right:30px;
-  margin-bottom: 20px;
-}
+
 
 .menu-desc-box {
-  @include w-h(100%, fit-content);
-  @extend .flex;
-  flex-direction: column;
+  @include App.p-b-m-w-h-f(none,none,none,100% fit-content,d column);
 
   div {
-    width: 100%;
+    @include App.p-b-m-w-h-f(10px 0,none,none,w 100%,none);
     text-align: left;
-    padding: 10px 0;
+  }
+  & > div:first-child {
+    @include App.font(#000000,Poppins, 36px, italic, 600, normal, 0.72px);
+  }
+  
+  & > div:not(:nth-child(1)) {
+    @include App.font(#000000,Poppins, 14px, normal, 300, 30px, 0.28px);
   }
 }
 
 
 
-.menu-desc-box > div:first-child {
-  @include font(Poppins, 36px, italic, 600, normal, 0.72px);
-}
-
-.menu-desc-box > div:not(:nth-child(1)) {
-  color: #000;
-  @include font(Poppins, 14px, normal, 300, 30px, 0.28px);
-}
 
 .sign-in-heading {
-  @include w-h(100%, 34px);
-  @extend .flex;
-  justify-content: flex-start;
+  @include App.w-h-flex(100%, 34px,flex-start);
 }
 
 .sign-in,
 .join-in {
-  @include font(Poppins, 20px, normal, 600, normal, normal);
-  color: #939ca3;
+  @include App.font(#939ca3,Poppins, 20px, normal, 600, normal, normal);
   margin: 0 10px;
   cursor: pointer;
 }
 
 .login-wrap {
-  @include w-h(100%, 96px);
-  @extend .flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 20px;
+  @include App.p-b-m-w-h-f(none,none,t 20px,100% 120px,j space-between a center d column);
 }
 
 .google-wrap,
 .fb-wrap {
-  @include w-h(100%, 16px);
-  @extend .flex;
   border-radius: 8px;
   border: 1px solid #8064a2;
   background: #f7f5f9;
   padding: 12px 0;
-  justify-content: start;
   cursor: pointer;
+  @include App.p-b-m-w-h-f(12px 0,none,t 20px,100% 96px,j flex-start a center);
 }
 
 .g-icon,
 .fb-icon {
-  @include w-h(16px, 16px);
+  @include App.w-h(16px, 16px);
   margin: 0 80px 0 30px;
 }
 
 .g-text,
 .fb-text {
-  color: #08090a;
-  @include font(Poppins, 14px, normal, 600, 16px, normal);
+  @include App.font(#08090a,Poppins, 14px, normal, 600, 16px, normal);
 }
 
 .separator {
-  @include w-h(100%, fit-content);
-  @extend .flex;
+  @include App.w-h-flex(100%, fit-content);
   margin: 20px 0;
 }
 
 .separator-line {
-  @include w-h(149px, 2px);
+  @include App.w-h(149px, 2px);
   background: #ced4da;
 }
 
 .separator-text {
-  @include w-h(97px, 16px);
-  @include font(Poppins, 12px, normal, 600, 16px, normal);
-  color: #000;
+  @include App.w-h(97px, 16px);
+  @include App.font(#000000,Poppins, 12px, normal, 600, 16px, normal);
 }
 
 .input-fields {
-  @include w-h(410px, fit-content);
-  @extend .flex;
-  flex-direction: column;
+  @include App.w-h-flex(410px, fit-content,center,center,column);
   gap: 16px;
 }
 
 .email-wrap,
 .pass-wrap {
-  @include w-h(90%, 26px);
-  @extend .flex;
-  justify-content: start;
+  @include App.w-h-flex(90%, 26px,flex-start,center);
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #adb2b9;
   background: #fff;
   input {
     display: block;
-    @include w-h(100%, 100%);
+    @include App.w-h(100%, 100%);
     outline: none;
   }
 }
@@ -153,20 +113,16 @@
 }
 
 .eye-icon {
-  @include w-h(16px, 16px);
+  @include App.w-h(16px, 16px);
   cursor: pointer;
 }
 
 .continue-wrap {
-  @include w-h(100%, 80px);
-  @extend .flex;
-  flex-direction: column;
+  @include App.w-h-flex(100%,80px,center,center,column);
   gap: 24px;
 
   .forgot-pass-wrap {
-    @include w-h(100%, 16px);
-    @extend .flex;
-    justify-content: space-between;
+    @include App.w-h-flex(100%, 16px,space-between);
     color: #939ca3;
   }
 
@@ -180,7 +136,7 @@
   }
 
   input[type="checkbox"] {
-    @include w-h(16px, 16px);
+    @include App.w-h(16px, 16px);
     margin-right: 5px;
     cursor: pointer;
   }
@@ -188,8 +144,7 @@
   label[for="remember"] {
     display: block;
     width: 92px;
-    color: #000;
-    @include font(Poppins, 12px, normal, 400, 16px, normal);
+    @include App.font(#000000,Poppins, 12px, normal, 400, 16px, normal);
     cursor: pointer;
   }
 }
@@ -197,49 +152,43 @@
 .forgot-pass {
   cursor: pointer;
   margin-right: 10px;
+  div:first-child {
+    @include App.w-h(15.759px, 16px);
+    margin-right: 5px;
+  }
+  div:last-child {
+    width: 107.361px;
+    @include App.font(#000000,Poppins, 12px, normal, 400, 16px, normal);
+  }
 }
 
-.forgot-pass div:first-child {
-  @include w-h(15.759px, 16px);
-  margin-right: 5px;
-}
 
-.forgot-pass div:last-child {
-  width: 107.361px;
-  color: #000;
-  @include font(Poppins, 12px, normal, 400, 16px, normal);
-}
 
 .continue-btn {
-  @include w-h(95%, 16px);
-  @extend .flex;
+  @include App.w-h-flex(95%, 16px);
   padding: 12px 0;
   border-radius: 8px;
   border: 1px solid #000;
   cursor: pointer;
   div {
-    @include font(Poppins, 14px, normal, 600, 16px, normal);
+    @include App.font(#000000,Poppins, 14px, normal, 600, 16px, normal);
   }
 }
 
 
 .join-in-wrap{
-    @include w-h(100%, fit-content);
-    @extend .flex;
-    align-items: end;
-    flex-direction: column;
+    @include App.w-h-flex(100%,fit-content,center,end,column);
     margin-top:-15px;
     .pass-strength{
-        color:  #939CA3;
-        @include font(Poppins,10px ,normal ,600 , 16px,normal);
+
+        @include App.font(#939CA3,Poppins,10px ,normal ,600 , 16px,normal);
 
 margin: 0 10px 20px 0;
     }
 
     .terms{
-        @include w-h(100%, fit-content);
-        color: #6D747A;
-        @include font(Poppins, 12px, normal, 400, normal, normal);
+        @include App.w-h(100%, fit-content);
+        @include App.font(#6D747A,Poppins, 12px, normal, 400, normal, normal);
 text-align: center;
 }
 
@@ -247,8 +196,7 @@ text-align: center;
     width:97%;
     margin-right:9px;
     background: #8064A2;
-    color: #FFF;
-    @include font(Poppins, 14px, normal, 600, 16px, normal);
+    @include App.font(#ffffff,Poppins, 14px, normal, 600, 16px, normal);
 margin-top:10px;
 border: none;
 }
